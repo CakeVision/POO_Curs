@@ -2,6 +2,9 @@
 #include <string.h>
 
 using namespace std;
+
+//CURS 2 -----------------------------------------------------
+
 //all member functions recieve a ref to the class
 class Pers {
     // default access is private
@@ -53,6 +56,7 @@ public:
 
 };
 
+//CURS 2 ---------------------------------------------
 int main(){
     Pers p, p2(10, "Hello", 2500);
 
@@ -78,3 +82,4 @@ int main(){
 
  */
 }
+//CURS 2 -------------------------------------------------
