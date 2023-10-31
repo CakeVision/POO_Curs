@@ -90,7 +90,7 @@ public:
     :marca(++nrPers), salariu(src.salariu), nume(src.nume)
     {
         nrJoburi =src.nrJoburi;
-        if
+    
     }
     int getMarca(){
         return marca;
