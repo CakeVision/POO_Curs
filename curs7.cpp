@@ -13,7 +13,10 @@
 // a trick for vector and string to avoid null handling is to alwasy have an elem; string has \0;
 #include <iostream>
 using namespace std;
-
+//facem virtualizare ca sa nu facem 2 functii separate, 
+//apelam sort pt asc si dec prin supraincarcare de functie
+//functiile virtuale nu ocupa loc dc nu au cod
+// dc au cod, ocupa loc in clasa, nu in obiect
 class Comparator{
 public: 
     virtual bool operator()(double a, double  b) = 0;
@@ -91,6 +94,14 @@ public:
                 if(!ord(pe[i], pe[j])){
                     aux = pe[i]; pe[i] = pe[j]; pe[j] = aux;
                 }
+    }
+    //ex: void operator+=(double d) Push Back
+    void operator+=(double d){
+        double* aux = new double[dim+1];
+        for(int i = 0; i < dim; i++) aux[i] = pe[i];
+        aux[dim] = d;
+        delete[] pe;
+        pe = aux;
     }
 
 };
