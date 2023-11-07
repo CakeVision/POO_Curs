@@ -84,6 +84,15 @@ public:
         
     }
 
+    void sort(Comparator& ord){
+        double aux = 0.0;
+        for(int i = 0; i<dim-1; i++)
+            for( int j = i+1; j<dim ; j++)
+                if(!ord(pe[i], pe[j])){
+                    aux = pe[i]; pe[i] = pe[j]; pe[j] = aux;
+                }
+    }
+
 };
 double Vector::errPoint = 0.0;
 int main()
@@ -95,5 +104,9 @@ int main()
     cout <<"\nv1[3]: " << v1[3];
     v1[0] = 21.5;
     cout <<"\nModificat v1[0]: " << v1[0];
+    MaiMic mm; MaiMare MM;
+    v1.sort(mm);
+    cout << "\n ASC:"<<v1;
+    cout << "\n DEC:"<<v1;
 	getchar();
 }
